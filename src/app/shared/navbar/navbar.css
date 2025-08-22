@@ -25,7 +25,11 @@
 }
 
 /* Profile */
-.profile-container { display: flex; align-items: center; }
+.profile-container { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
 .profile-pic {
   width: 70px; height: 70px;
   border-radius: 50%;
@@ -33,7 +37,10 @@
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.profile-pic:hover { transform: scale(1.15) rotate(-5deg); box-shadow: 0 0 30px #ffd369; }
+.profile-pic:hover { 
+  transform: scale(1.15) rotate(-5deg); 
+  box-shadow: 0 0 30px #ffd369; 
+}
 
 /* Logo */
 .logo-name a {
@@ -44,6 +51,7 @@
   letter-spacing: 1.5px;
   text-shadow: 0 0 5px #ffd369, 0 0 10px #ff6b6b;
   transition: all 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
 }
 .logo-name a:hover {
   color: #fff; transform: scale(1.1) rotate(-2deg);
@@ -96,16 +104,54 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    height: 70px;
+  }
+
+  .profile-pic {
+    width: 45px;   /* smaller profile image */
+    height: 45px;
+    border: 2px solid #ffd369;
+  }
+
+  .logo-name a {
+    font-size: 18px;   /* smaller name text */
+    letter-spacing: 1px;
+  }
+
   .nav-links {
-    position: fixed; top: 80px; right: 0;
-    flex-direction: column; gap: 20px;
+    position: fixed; 
+    top: 70px; 
+    right: 0;
+    flex-direction: column; 
+    gap: 20px;
     background: linear-gradient(180deg,#0f0f0f,#2c2c2c);
-    padding: 20px 30px; border-radius: 12px;
+    padding: 20px 30px; 
+    border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.6);
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
   }
   .nav-links.open { transform: translateX(0); }
   .menu-toggle { display: flex; }
+}
+
+/* Very small screens (phones < 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 15px;
+    height: 65px;
+  }
+
+  .profile-pic {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-name a {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
 }
