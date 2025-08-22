@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <!-- Profile Picture (Left) -->
+  <div class="profile-container">
+    <img src="assets/1000026400.jpg" alt="Profile" class="profile-pic">
+  </div>
+
+  <!-- Logo -->
+  <div class="logo-name">
+    <a routerLink="/">✨ Sushant Banyal Portfolio</a>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>
+    <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+  </ul>
+
+  <!-- Mobile Menu Icon -->
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <div [class.bar1]="menuOpen"></div>
+    <div [class.bar2]="menuOpen"></div>
+    <div [class.bar3]="menuOpen"></div>
+  </div>
+</nav>

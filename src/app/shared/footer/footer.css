@@ -1,0 +1,40 @@
+/* ================= Footer ================= */
+.footer {
+  background: linear-gradient(90deg, #000000, #434343); /* Dark gradient */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer .social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Increased gap between icons */
+}
+
+.footer .social-links a {
+  font-size: 26px; /* Bigger icons */
+  margin: 0 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Brand Colors */
+.footer .social-links a:nth-child(1) { color: #0A66C2; } /* LinkedIn Blue */
+.footer .social-links a:nth-child(2) { color: #a29f9f; } /* GitHub Gray */
+.footer .social-links a:nth-child(3) { color: #E1306C; } /* Instagram Pink/Red */
+.footer .social-links a:nth-child(4) { color: #25D366; } /* WhatsApp Green */
+
+/* Hover Effect */
+.footer .social-links a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2); /* slightly brighter on hover */
+}

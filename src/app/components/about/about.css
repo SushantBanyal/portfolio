@@ -1,0 +1,198 @@
+/* ================= About Section ================= */
+.about {
+  padding: 100px 60px;
+  background: linear-gradient(135deg, #1e1f28, #2c2f48);
+  color: #fff;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Container */
+.about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Content */
+.about-content {
+  max-width: 650px;
+  z-index: 1;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #ffd369;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards 0.2s;
+}
+
+.about-content p,
+.skills-list li {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #f0e6d2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+
+/* Staggered animation for paragraphs */
+.about-content p:nth-of-type(1) { animation-delay: 0.4s; }
+.about-content p:nth-of-type(2) { animation-delay: 0.6s; }
+.about-content p:nth-of-type(3) { animation-delay: 0.8s; }
+.about-content p:nth-of-type(4) { animation-delay: 1s; }
+
+/* Skills list */
+.skills-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.skills-list li {
+  color: #fff7c0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.skills-list li:hover {
+  color: #ffd369;
+  transform: translateX(5px);
+}
+
+/* ================= Buttons ================= */
+.about-buttons {
+  display: flex;
+  gap: 30px; /* increased gap between buttons */
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards 1.2s;
+}
+
+.about-buttons .btn {
+  padding: 16px 38px; /* bigger size */
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #ff7e5f, #ffb677);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #ffd369, #ff7e5f);
+  color: #1e1f28;
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #ffd369;
+  border: 2px solid #ffd369;
+}
+
+.secondary-btn:hover {
+  background: #ffd369;
+  color: #1e1f28;
+  transform: translateY(-3px);
+}
+
+/* ================= Social Links ================= */
+.social-links {
+  display: flex;
+  gap: 35px; /* bigger gap */
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards 1.4s;
+}
+
+.social-links a {
+  font-size: 34px; /* bigger icons */
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a.linkedin { color: #0e76a8; }
+.social-links a.github { color: #9b9595; }
+.social-links a.instagram { color: #e4405f; }
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.15);
+  opacity: 0.9;
+}
+
+/* ================= About Image ================= */
+.about-image {
+  max-width: 450px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards 1.6s;
+}
+
+.about-image img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+}
+
+/* ================= Fade-Up Animation ================= */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+  .about .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-image {
+    max-width: 350px;
+    margin-bottom: 40px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .skills-list {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content h2 { font-size: 32px; }
+  .about-content p,
+  .skills-list li { font-size: 16px; }
+  .about-buttons .btn { padding: 14px 30px; font-size: 16px; }
+  .social-links a { font-size: 28px; }
+  .about-image { max-width: 280px; }
+}
